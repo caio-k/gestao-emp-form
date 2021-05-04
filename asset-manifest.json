@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/gestao-emp-form/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/gestao-emp-form/static/js/main.e748894f.chunk.js",
+    "main.js.map": "/gestao-emp-form/static/js/main.e748894f.chunk.js.map",
+    "runtime-main.js": "/gestao-emp-form/static/js/runtime-main.bcc9f43e.js",
+    "runtime-main.js.map": "/gestao-emp-form/static/js/runtime-main.bcc9f43e.js.map",
+    "static/js/2.16c02964.chunk.js": "/gestao-emp-form/static/js/2.16c02964.chunk.js",
+    "static/js/2.16c02964.chunk.js.map": "/gestao-emp-form/static/js/2.16c02964.chunk.js.map",
+    "static/js/3.3b5f9333.chunk.js": "/gestao-emp-form/static/js/3.3b5f9333.chunk.js",
+    "static/js/3.3b5f9333.chunk.js.map": "/gestao-emp-form/static/js/3.3b5f9333.chunk.js.map",
+    "index.html": "/gestao-emp-form/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/gestao-emp-form/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.16c02964.chunk.js.LICENSE.txt": "/gestao-emp-form/static/js/2.16c02964.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/gestao-emp-form/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bcc9f43e.js",
+    "static/js/2.16c02964.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.e748894f.chunk.js"
+  ]
+}
