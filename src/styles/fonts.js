@@ -1,4 +1,4 @@
-export default {
+const fonts = {
   family: {
     montserrat: '"Montserrat", sans-serif',
     roboto: '"Roboto", sans-serif',
@@ -7,4 +7,6 @@ export default {
   size: {
     default: '1rem',
   },
-};
+}
+
+export default fonts
