@@ -18,7 +18,7 @@ const Container = styled("nav")`
 const Logo = styled("h1")`
 	cursor: pointer;
 	justify-self: start;
-	color: ${(props) => props.theme.colors.gray400};
+	color: ${(props) => props.theme.colors.white};
 	font-size: 30px;
 `;
 
