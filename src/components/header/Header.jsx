@@ -1,6 +1,8 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import styled from "styled-components";
+
+import MenuItems from "./MenuItems";
 
 const Container = styled("nav")`
 	width: 100%;
@@ -77,19 +79,35 @@ const UserArea = styled("div")`
 
 function Header(props) {
 	const { pathname } = useLocation();
+	const history = useHistory();
 
 	const menuItemSelected = pathname.split("/")[1];
 
+	function onClickHandler(item, logo = false) {
+		if (logo) {
+			history.push("/home");
+		} else {
+			history.push(`${item.url}`);
+		}
+	}
+
 	return (
 		<Container>
-			<Logo>SMART</Logo>
+			<Logo onClick={() => onClickHandler(null, true)}>SMART</Logo>
 			<Menu>
-				<MenuItem active={menuItemSelected === "home" ? true : false}>
-					Home
-				</MenuItem>
-				<MenuItem active={menuItemSelected === "feedback" ? true : false}>
-					Feedback
-				</MenuItem>
+				{MenuItems.map((item) => {
+					return (
+						<MenuItem
+							key={Math.random()}
+							active={
+								menuItemSelected === item.title.toLowerCase() ? true : false
+							}
+							onClick={() => onClickHandler(item)}
+						>
+							{item.title}
+						</MenuItem>
+					);
+				})}
 			</Menu>
 			<UserArea>
 				<i className="fas fa-user-circle"></i>
