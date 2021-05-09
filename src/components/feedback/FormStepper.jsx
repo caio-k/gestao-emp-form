@@ -48,7 +48,7 @@ function FormStepper({ children, ...props }) {
 
 					{currentChild}
 
-					<Grid container spacing={2}>
+					<Grid container spacing={4} justify="flex-end">
 						{step > 0 ? (
 							<Grid item>
 								<Button
