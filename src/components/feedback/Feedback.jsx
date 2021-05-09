@@ -1,13 +1,21 @@
 import React, { useState } from "react";
-import { Box, Card, CardContent } from "@material-ui/core";
-import { Field } from "formik";
-import { CheckboxWithLabel, TextField } from "formik-material-ui";
+import {
+	Box,
+	Card,
+	CardContent,
+	FormLabel,
+	Radio,
+	RadioGroup,
+} from "@material-ui/core";
+import { Field, ErrorMessage } from "formik";
+import { TextField } from "formik-material-ui";
 import * as yup from "yup";
 import styled from "styled-components";
 
 import Header from "../header/Header";
 import FormStepper from "./FormStepper";
 import FormStep from "./FormStep";
+import RadioOptions from "./RadioOptions";
 
 const Container = styled("div")`
 	padding: 50px;
@@ -22,6 +30,27 @@ const Container = styled("div")`
 
 	.card {
 		width: 90%;
+	}
+
+	.box-step2 {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.label {
+		margin: 12px;
+	}
+
+	.options {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.error-msg {
+		font-size: 0.8rem;
+		color: red;
 	}
 `;
 
@@ -54,7 +83,8 @@ function FeedbackContent(props) {
 								myName: "Usuário Mock",
 								employeeName: "",
 								date: todaysDate(),
-								money: 0,
+								efficiency: "",
+								eficacia: "",
 								description: "",
 							}}
 							onSubmit={async (values) => {
@@ -109,6 +139,91 @@ function FeedbackContent(props) {
 											required: true,
 										}}
 									/>
+								</Box>
+							</FormStep>
+							<FormStep
+								label="Pilar de Desempenho"
+								validationSchema={yup.object().shape({
+									efficiency: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+									eficacia: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+								})}
+							>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="efficiency" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador realizou entregas com qualidade e cumprindo as
+										metas estabelecidas?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="efficiency">
+											<RadioOptions
+												name="efficiency"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="efficiency"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="efficiency"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="efficiency"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
+								</Box>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="eficacia" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador realizou entregas dentro do prazo e orçamento?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="eficacia">
+											<RadioOptions
+												name="eficacia"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="eficacia"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="eficacia"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="eficacia"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
 								</Box>
 							</FormStep>
 							{/* <FormStep
