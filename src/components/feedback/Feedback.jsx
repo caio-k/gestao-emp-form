@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Card, CardContent } from "@material-ui/core";
 import { Field } from "formik";
 import { CheckboxWithLabel, TextField } from "formik-material-ui";
-import { mixed, number, object } from "yup";
+import * as yup from "yup";
 import styled from "styled-components";
 
 import Header from "../header/Header";
@@ -28,6 +28,21 @@ const Container = styled("div")`
 const sleep = (time) => new Promise((acc) => setTimeout(acc, time));
 
 function FeedbackContent(props) {
+	function todaysDate() {
+		const today = new Date();
+		const day = `${
+			today.getDate() < 10 ? `0${today.getDate()}` : today.getDate()
+		}`;
+		const month = `${
+			today.getMonth() + 1 < 10 ? `0${today.getMonth() + 1}` : today.getMonth()
+		}`;
+		const year = today.getFullYear();
+
+		const dateString = `${year}-${month}-${day}`;
+
+		return dateString;
+	}
+
 	return (
 		<>
 			<Header />
@@ -36,9 +51,9 @@ function FeedbackContent(props) {
 					<CardContent>
 						<FormStepper
 							initialValues={{
-								firstName: "",
-								lastName: "",
-								millionaire: false,
+								myName: "Usuário Mock",
+								employeeName: "",
+								date: todaysDate(),
 								money: 0,
 								description: "",
 							}}
@@ -47,33 +62,56 @@ function FeedbackContent(props) {
 								console.log("values", values);
 							}}
 						>
-							<FormStep label="Personal Data">
+							<FormStep
+								label="Informações Gerais"
+								validationSchema={yup.object({
+									myName: yup
+										.string()
+										.required("É necessário informar o nome do avaliador."),
+									employeeName: yup
+										.string()
+										.required(
+											"É necessário informar o nome de quem está sendo avaliado."
+										),
+									date: yup.date().required("É necessário informar uma data."),
+								})}
+							>
 								<Box paddingBottom={2}>
 									<Field
 										fullWidth
-										name="firstName"
+										name="myName"
 										component={TextField}
-										label="First Name"
+										label="Nome do avaliador"
+										InputLabelProps={{
+											required: true,
+										}}
 									/>
 								</Box>
 								<Box paddingBottom={2}>
 									<Field
 										fullWidth
-										name="lastName"
+										name="employeeName"
 										component={TextField}
-										label="Last Name"
+										label="Nome do avaliado"
+										InputLabelProps={{
+											required: true,
+										}}
 									/>
 								</Box>
 								<Box paddingBottom={2}>
 									<Field
-										name="millionaire"
-										type="checkbox"
-										component={CheckboxWithLabel}
-										Label={{ label: "I am a millionaire" }}
+										name="date"
+										type="date"
+										component={TextField}
+										label="Data"
+										InputLabelProps={{
+											shrink: true,
+											required: true,
+										}}
 									/>
 								</Box>
 							</FormStep>
-							<FormStep
+							{/* <FormStep
 								label="Bank Accounts"
 								validationSchema={object({
 									money: mixed().when("millionaire", {
@@ -97,7 +135,7 @@ function FeedbackContent(props) {
 										label="All the money I have"
 									/>
 								</Box>
-							</FormStep>
+							</FormStep> */}
 							<FormStep label="More Info">
 								<Box paddingBottom={2}>
 									<Field
