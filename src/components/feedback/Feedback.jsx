@@ -88,7 +88,13 @@ function FeedbackContent(props) {
 								resilience: "",
 								challenges: "",
 								ethic: "",
-								description: "",
+								problemResolution: "",
+								communication: "",
+								proactivity: "",
+								interpersonalRelationship: "",
+								teamWork: "",
+								teamRelationship: "",
+								culturalFit: "",
 							}}
 							onSubmit={async (values) => {
 								await sleep(3000);
@@ -397,39 +403,293 @@ function FeedbackContent(props) {
 									</div>
 								</Box>
 							</FormStep>
-							{/* <FormStep
-								label="Bank Accounts"
-								validationSchema={object({
-									money: mixed().when("millionaire", {
-										is: true,
-										then: number()
-											.required()
-											.min(
-												1_000_000,
-												"Because you said you are a millionaire you need to have 1 million"
-											),
-										otherwise: number().required(),
-									}),
+							<FormStep
+								label="Pilar de Soft Skills"
+								validationSchema={yup.object().shape({
+									problemResolution: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+									communication: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+									proactivity: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+									interpersonalRelationship: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+									teamWork: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+									teamRelationship: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+									culturalFit: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
 								})}
 							>
-								<Box paddingBottom={2}>
-									<Field
-										fullWidth
-										name="money"
-										type="number"
-										component={TextField}
-										label="All the money I have"
-									/>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="problemResolution" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador soube lidar e resolver os mais diversos
+										problemas que surgiam no dia a dia da empresa?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="problemResolution">
+											<RadioOptions
+												name="problemResolution"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="problemResolution"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="problemResolution"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="problemResolution"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
 								</Box>
-							</FormStep> */}
-							<FormStep label="More Info">
-								<Box paddingBottom={2}>
-									<Field
-										fullWidth
-										name="description"
-										component={TextField}
-										label="Description"
-									/>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="communication" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador sabe se comunicar bem com qualquer pessoa do
+										ambiente de trabalho, até mesmo com colegas de outros
+										departamentos?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="communication">
+											<RadioOptions
+												name="communication"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="communication"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="communication"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="communication"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
+								</Box>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="proactivity" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador demonstra ser pró-ativo nas mais diversar
+										ocasiões do dia a dia?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="proactivity">
+											<RadioOptions
+												name="proactivity"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="proactivity"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="proactivity"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="proactivity"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
+								</Box>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="interpersonalRelationship" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador sabe se comunicar cordialmente com todos do
+										seu ambiente de trabalho?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="interpersonalRelationship">
+											<RadioOptions
+												name="interpersonalRelationship"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="interpersonalRelationship"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="interpersonalRelationship"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="interpersonalRelationship"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
+								</Box>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="teamWork" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador ajuda o seus colegas de equipe quando os
+										mesmos estão com dificuldade em alguma tarefa? O colaborador
+										sabe compartilhar seus conhecimentos?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="teamWork">
+											<RadioOptions
+												name="teamWork"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="teamWork"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="teamWork"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="teamWork"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
+								</Box>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="teamRelationship" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador tem um bom relacionamento com seus colegas de
+										time, mesmo em situações de estresse?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="teamRelationship">
+											<RadioOptions
+												name="teamRelationship"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="teamRelationship"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="teamRelationship"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="teamRelationship"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
+								</Box>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="culturalFit" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador tem um fit-cultural com a empresa, seja
+										seguindo os processos, até mesmo na forma de se trabalhar em
+										equipe?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="culturalFit">
+											<RadioOptions
+												name="culturalFit"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="culturalFit"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="culturalFit"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="culturalFit"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
 								</Box>
 							</FormStep>
 						</FormStepper>
