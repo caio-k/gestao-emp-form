@@ -29,6 +29,7 @@ function FormStepper({ children, ...props }) {
 				if (isLastStep()) {
 					await props.onSubmit(values, helpers);
 					setCompleted(true);
+					alert("Feedback finalizado com sucesso! :)");
 					history.push("/home");
 				} else {
 					setStep((s) => s + 1);

@@ -119,7 +119,7 @@ function FeedbackContent(props) {
 									values.interpersonalRelationship;
 								const trabalhoEquipe = values.teamWork;
 								const relacionamentoEquipe = values.teamRelationship;
-								const fitCultural = values.fitCultural;
+								const fitCultural = values.culturalFit;
 
 								const data = `${dateStringArray[2]}/${dateStringArray[1]}/${dateStringArray[0]}`;
 
