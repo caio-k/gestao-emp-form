@@ -10,6 +10,7 @@ import { Field, ErrorMessage } from "formik";
 import { TextField } from "formik-material-ui";
 import * as yup from "yup";
 import styled from "styled-components";
+import { jsPDF } from "jspdf";
 
 import Header from "../header/Header";
 import FormStepper from "./FormStepper";
@@ -97,8 +98,56 @@ function FeedbackContent(props) {
 								culturalFit: "",
 							}}
 							onSubmit={async (values) => {
-								await sleep(3000);
-								console.log("values", values);
+								const doc = new jsPDF();
+
+								await sleep(1500);
+								console.log(values);
+
+								const avaliador = values.myName;
+								const avaliado = values.employeeName;
+								const dateStringArray = values.date.split("-");
+								const eficiencia = values.efficiency;
+								const eficacia = values.eficacia;
+								const comportamento = values.behavior;
+								const resiliencia = values.resilience;
+								const desafio = values.challenges;
+								const etica = values.ethic;
+								const resolucaoProblemas = values.problemResolution;
+								const comunicacao = values.communication;
+								const proatividade = values.proactivity;
+								const relacionamentoInterpessoal =
+									values.interpersonalRelationship;
+								const trabalhoEquipe = values.teamWork;
+								const relacionamentoEquipe = values.teamRelationship;
+								const fitCultural = values.fitCultural;
+
+								const data = `${dateStringArray[2]}/${dateStringArray[1]}/${dateStringArray[0]}`;
+
+								const stringContent = `Data do feedback: ${data}
+Nome do avaliador: ${avaliador}
+Nome do avaliado: ${avaliado}
+
+Pilar de Desempenho:
+1) Eficiência: ${eficiencia}
+2) Eficácia: ${eficacia}
+
+Pilar de Comportamento
+3) Postura: ${comportamento}
+4) Resiliência: ${resiliencia}
+5) Desafios: ${desafio}
+6) Ética: ${etica}
+
+Pilar de Habilidades Sociais e Pessoais
+7) Resolução de problemas: ${resolucaoProblemas}
+8) Comunicação? ${comunicacao}
+9) Pró-atividade: ${proatividade}
+10) Relacionamento Interpessoal: ${relacionamentoInterpessoal}
+11) Trabalho em Equipe: ${trabalhoEquipe}
+12) Relacionamento com a Equipe: ${relacionamentoEquipe}
+13) Fit cultural: ${fitCultural}`;
+
+								doc.text(stringContent, 10, 10);
+								doc.save("feedback.pdf");
 							}}
 						>
 							<FormStep
