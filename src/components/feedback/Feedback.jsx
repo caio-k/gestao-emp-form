@@ -148,6 +148,8 @@ Pilar de Habilidades Sociais e Pessoais
 
 								doc.text(stringContent, 10, 10);
 								doc.save("feedback.pdf");
+
+								await sleep(1000);
 							}}
 						>
 							<FormStep

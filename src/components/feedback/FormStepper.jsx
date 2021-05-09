@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import {
 	Button,
 	CircularProgress,
@@ -14,6 +15,7 @@ function FormStepper({ children, ...props }) {
 	const [step, setStep] = useState(0);
 	const currentChild = childrenArray[step];
 	const [completed, setCompleted] = useState(false);
+	const history = useHistory();
 
 	function isLastStep() {
 		return step === childrenArray.length - 1;
@@ -27,6 +29,7 @@ function FormStepper({ children, ...props }) {
 				if (isLastStep()) {
 					await props.onSubmit(values, helpers);
 					setCompleted(true);
+					history.push("/home");
 				} else {
 					setStep((s) => s + 1);
 					helpers.setTouched({});
