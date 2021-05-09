@@ -4,7 +4,6 @@ import {
 	Card,
 	CardContent,
 	FormLabel,
-	Radio,
 	RadioGroup,
 } from "@material-ui/core";
 import { Field, ErrorMessage } from "formik";
@@ -85,6 +84,10 @@ function FeedbackContent(props) {
 								date: todaysDate(),
 								efficiency: "",
 								eficacia: "",
+								behavior: "",
+								resilience: "",
+								challenges: "",
+								ethic: "",
 								description: "",
 							}}
 							onSubmit={async (values) => {
@@ -218,6 +221,174 @@ function FeedbackContent(props) {
 											/>
 											<RadioOptions
 												name="eficacia"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
+								</Box>
+							</FormStep>
+							<FormStep
+								label="Pilar de Comportamento"
+								validationSchema={yup.object().shape({
+									behavior: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+									resilience: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+									challenges: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+									ethic: yup
+										.string()
+										.required("É necessário escolher uma das opções."),
+								})}
+							>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="behavior" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador se comporta e se expressa de maneira adequada
+										em momentos de estresse?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="behavior">
+											<RadioOptions
+												name="behavior"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="behavior"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="behavior"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="behavior"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
+								</Box>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="resilience" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador demonstra ser resiliente em situações
+										complexas?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="resilience">
+											<RadioOptions
+												name="resilience"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="resilience"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="resilience"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="resilience"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
+								</Box>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="challenges" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador teve um comportamento anti-frágil, onde apesar
+										das dificuldades da situação ele soube se portar bem e
+										aprender com elas?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="challenges">
+											<RadioOptions
+												name="challenges"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="challenges"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="challenges"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="challenges"
+												type="radio"
+												value="Modelo/Referência"
+												label="Modelo/Referência"
+											/>
+										</RadioGroup>
+									</div>
+								</Box>
+								<Box paddingBottom={2} marginTop={4} className="box-step2">
+									<div className="error-msg">
+										<ErrorMessage name="ethic" />
+									</div>
+									<FormLabel component="legend" className="label">
+										O colaborador teve um comportamento ético seja diante de
+										situações nas quais estava equivocado, até mesmo em outras
+										relações do cotidiano?
+									</FormLabel>
+									<div className="options">
+										<RadioGroup row name="ethic">
+											<RadioOptions
+												name="ethic"
+												type="radio"
+												value="Não Aderente"
+												label="Não Aderente"
+											/>
+											<RadioOptions
+												name="ethic"
+												type="radio"
+												value="Parcialmente Aderente"
+												label="Parcialmente Aderente"
+											/>
+											<RadioOptions
+												name="ethic"
+												type="radio"
+												value="Aderente"
+												label="Aderente"
+											/>
+											<RadioOptions
+												name="ethic"
 												type="radio"
 												value="Modelo/Referência"
 												label="Modelo/Referência"
