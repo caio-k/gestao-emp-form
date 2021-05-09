@@ -16,7 +16,9 @@ const Container = styled("div")`
 `;
 
 const Phrase = styled("p")`
-	width: 70vw;
+	width: fit-content;
+	max-width: 70vw;
+	text-align: center;
 	margin-top: 250px;
 	font-style: italic;
 	font-weight: 650;
@@ -33,7 +35,7 @@ const Button = styled("button")`
 	padding: 15px 30px;
 	position: relative;
 	cursor: pointer;
-	font-family: "Montserrat";
+	font-family: "Montserrat", serif;
 	font-size: 1.6rem;
 
 	border-radius: 30px;
