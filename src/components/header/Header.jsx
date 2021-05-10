@@ -23,14 +23,13 @@ const Logo = styled("h1")`
 `;
 
 const Menu = styled("ul")`
-	margin: 12px 15px;
+	margin: 12px 2rem 12px 15px;
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	grid-gap: 40px;
 	text-align: center;
 	width: 70vw;
 	justify-content: center;
-	margin-right: 2rem;
 	list-style-type: none;
 `;
 
@@ -98,9 +97,9 @@ function Header(props) {
 				{MenuItems.map((item) => {
 					return (
 						<MenuItem
-							key={Math.random()}
+							key={item.title}
 							active={
-								menuItemSelected === item.title.toLowerCase() ? true : false
+								menuItemSelected === item.title.toLowerCase()
 							}
 							onClick={() => onClickHandler(item)}
 						>
@@ -110,7 +109,7 @@ function Header(props) {
 				})}
 			</Menu>
 			<UserArea>
-				<i className="fas fa-user-circle"></i>
+				<i className="fas fa-user-circle"/>
 				<div className="user-info">
 					<p className="name">Usuário Mock</p>
 					<p className="job">Gerente de Sistemas de TI</p>
