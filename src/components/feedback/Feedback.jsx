@@ -30,6 +30,7 @@ const Container = styled("div")`
 
 	.card {
 		width: 90%;
+		box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1);
 	}
 
 	.box-step2 {
@@ -67,9 +68,7 @@ function FeedbackContent(props) {
 		}`;
 		const year = today.getFullYear();
 
-		const dateString = `${year}-${month}-${day}`;
-
-		return dateString;
+		return `${year}-${month}-${day}`;
 	}
 
 	return (
@@ -101,7 +100,6 @@ function FeedbackContent(props) {
 								const doc = new jsPDF();
 
 								await sleep(1500);
-								console.log(values);
 
 								const avaliador = values.myName;
 								const avaliado = values.employeeName;
@@ -115,8 +113,7 @@ function FeedbackContent(props) {
 								const resolucaoProblemas = values.problemResolution;
 								const comunicacao = values.communication;
 								const proatividade = values.proactivity;
-								const relacionamentoInterpessoal =
-									values.interpersonalRelationship;
+								const relacionamentoInterpessoal = values.interpersonalRelationship;
 								const trabalhoEquipe = values.teamWork;
 								const relacionamentoEquipe = values.teamRelationship;
 								const fitCultural = values.culturalFit;
@@ -127,7 +124,7 @@ function FeedbackContent(props) {
 Nome do avaliador: ${avaliador}
 Nome do avaliado: ${avaliado}
 
-Pilar de Desempenho:
+Pilar de Desempenho
 1) Eficiência: ${eficiencia}
 2) Eficácia: ${eficacia}
 
@@ -139,14 +136,15 @@ Pilar de Comportamento
 
 Pilar de Habilidades Sociais e Pessoais
 7) Resolução de problemas: ${resolucaoProblemas}
-8) Comunicação? ${comunicacao}
+8) Comunicação: ${comunicacao}
 9) Pró-atividade: ${proatividade}
 10) Relacionamento Interpessoal: ${relacionamentoInterpessoal}
 11) Trabalho em Equipe: ${trabalhoEquipe}
 12) Relacionamento com a Equipe: ${relacionamentoEquipe}
 13) Fit cultural: ${fitCultural}`;
 
-								doc.text(stringContent, 10, 10);
+								doc.setFontSize(14);
+								doc.text(stringContent, 20, 20);
 								doc.save("feedback.pdf");
 
 								await sleep(1000);
