@@ -27,6 +27,7 @@ const Phrase = styled("p")`
 	
 	@media (max-width: 1000px) {
 		margin-top: 100px;
+		font-size: 1.5em;
 	}
 `;
 
