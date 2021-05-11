@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import styled from "styled-components";
 
 import Header from "../header/Header";
@@ -24,6 +24,10 @@ const Phrase = styled("p")`
 	font-weight: 650;
 	font-size: 3rem;
 	justify-self: center;
+	
+	@media (max-width: 1000px) {
+		margin-top: 100px;
+	}
 `;
 
 const Author = styled("p")`
@@ -74,24 +78,24 @@ const Button = styled("button")`
 `;
 
 function HomeContent(props) {
-	const history = useHistory();
+  const history = useHistory();
 
-	function onClickHandler() {
-		history.push("/feedback");
-	}
+  function onClickHandler() {
+    history.push("/feedback");
+  }
 
-	return (
-		<>
-			<Header />
-			<Container>
-				<Phrase>
-					“We all need people who will give us feedback. That's how we improve.”
-				</Phrase>
-				<Author>Bill Gates</Author>
-				<Button onClick={() => onClickHandler()}>Dar meu feedback -&gt;</Button>
-			</Container>
-		</>
-	);
+  return (
+    <>
+      <Header/>
+      <Container>
+        <Phrase>
+          “We all need people who will give us feedback. That's how we improve.”
+        </Phrase>
+        <Author>Bill Gates</Author>
+        <Button onClick={() => onClickHandler()}>Dar meu feedback -&gt;</Button>
+      </Container>
+    </>
+  );
 }
 
 export default HomeContent;
