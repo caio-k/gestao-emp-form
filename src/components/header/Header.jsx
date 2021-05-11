@@ -10,7 +10,7 @@ const Container = styled("header")`
   height: 100px;
   padding: 0 40px;
   background-color: ${(props) => props.theme.colors.black};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
   
   span {
     font-size: 1.8em;
@@ -38,13 +38,11 @@ const Container = styled("header")`
     
     span {
       font-size: 17px;
+      line-height: 20px;
     }
     
     p {
       padding-bottom: 2px;
-    }
-    
-    span, p {
       line-height: 20px;
     }
   }
