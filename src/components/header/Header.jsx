@@ -73,7 +73,7 @@ const Container = styled("header")`
     cursor: default;
   }
   
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     button {
       background-color: ${(props) => props.theme.colors.white};
       color: ${(props) => props.theme.colors.black};
@@ -131,7 +131,7 @@ const Menu = styled("ul")`
     background-color: gray;
   }
   
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     position: fixed;
     width: 100%;
     height: fit-content;
@@ -157,11 +157,11 @@ const Menu = styled("ul")`
 function Header(props) {
   const {pathname} = useLocation();
 
-  const menuItemSelected = pathname.split("/")[1];
+  const menuItemSelected = pathname.split("/")[2];
 
   return (
     <Container>
-      <a href="/"><span>SMART</span></a>
+      <a href="/gestao-emp-form/home"><span>SMART</span></a>
 
       <input type="checkbox" id="chk"/>
 
