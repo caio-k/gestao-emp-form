@@ -1,0 +1,27 @@
+.page-enter {
+	opacity: 0.8;
+	transition: opacity 100ms linear;
+	-moz-transition: opacity 100ms linear;
+	-webkit-transition: opacity 100ms linear;
+}
+
+.page-enter-active {
+	opacity: 1;
+	transition: opacity 100ms linear;
+	-moz-transition: opacity 100ms linear;
+	-webkit-transition: opacity 100ms linear;
+}
+
+.page-exit {
+	opacity: 1;
+	transition: opacity 100ms linear;
+	-moz-transition: opacity 100ms linear;
+	-webkit-transition: opacity 100ms linear;
+}
+
+.page-exit-active {
+	opacity: 0.8;
+	transition: opacity 0.25s ease-in-out;
+	-moz-transition: opacity 0.25s ease-in-out;
+	-webkit-transition: opacity 0.25s ease-in-out;
+}
