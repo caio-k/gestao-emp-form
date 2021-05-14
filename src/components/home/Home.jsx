@@ -81,7 +81,7 @@ function HomeContent(props) {
   const history = useHistory();
 
   function onClickHandler() {
-    history.push("/gestao-emp-form/feedback");
+    history.push("/feedback");
   }
 
   return (

@@ -31,7 +31,7 @@ function FormStepper({ children, vertical, ...props }) {
 						await props.onSubmit(values, helpers);
 						setCompleted(true);
 						alert("Feedback finalizado com sucesso! :)");
-						history.push("/gestao-emp-form/home");
+						history.push("/home");
 					} else {
 						window["scrollTo"]({ top: 0, behavior: "smooth" });
 						setStep((s) => s + 1);
