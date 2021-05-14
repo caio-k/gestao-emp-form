@@ -2,15 +2,16 @@ import React from "react";
 import { useField } from "formik";
 import { Radio, FormControlLabel } from "@material-ui/core";
 
-function RadioOptions({ label, ...props }) {
+function RadioOptions({ label, position, ...props }) {
 	const [field] = useField(props);
+	const placement = position ? "right" : "bottom";
 
 	return (
 		<FormControlLabel
 			{...field}
 			control={<Radio color="primary" />}
 			label={label}
-			labelPlacement="bottom"
+			labelPlacement={placement}
 		/>
 	);
 }
