@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 
-import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
+import {HashRouter as Router, Redirect, Route} from 'react-router-dom'
 
 import Home from './pages/home'
 import Feedback from './pages/feedback'
@@ -11,7 +11,7 @@ const SiteContent = styled("div")`
 `;
 
 const Routes = (props) => (
-  <Router basename={process.env.PUBLIC_URL}>
+  <Router basename={"/"}>
     <SiteContent>
         <Route path="/home" component={Home}/>
         <Route path="/feedback" component={Feedback}/>
