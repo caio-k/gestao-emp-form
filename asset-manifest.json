@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/gestao-emp-form/static/js/main.0c1a1cf3.chunk.js",
-    "main.js.map": "/gestao-emp-form/static/js/main.0c1a1cf3.chunk.js.map",
+    "main.js": "/gestao-emp-form/static/js/main.0c73d1e3.chunk.js",
+    "main.js.map": "/gestao-emp-form/static/js/main.0c73d1e3.chunk.js.map",
     "runtime-main.js": "/gestao-emp-form/static/js/runtime-main.36cf6df8.js",
     "runtime-main.js.map": "/gestao-emp-form/static/js/runtime-main.36cf6df8.js.map",
     "static/js/2.efc2423c.chunk.js": "/gestao-emp-form/static/js/2.efc2423c.chunk.js",
@@ -23,6 +23,6 @@
   "entrypoints": [
     "static/js/runtime-main.36cf6df8.js",
     "static/js/3.7e2fdbf7.chunk.js",
-    "static/js/main.0c1a1cf3.chunk.js"
+    "static/js/main.0c73d1e3.chunk.js"
   ]
 }
