@@ -88,6 +88,7 @@ function FeedbackContent(props) {
 				<Card className="card">
 					<CardContent>
 						<FormStepper
+							vertical={vertical}
 							initialValues={{
 								myName: "Usuário Mock",
 								employeeName: "",
