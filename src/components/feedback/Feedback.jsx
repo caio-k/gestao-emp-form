@@ -12,6 +12,8 @@ import FormStepper from "./FormStepper";
 import FormStep from "./FormStep";
 import RadioOptions from "./RadioOptions";
 
+import FeedbackItems from "./FeedbackItems";
+
 const Container = styled("div")`
 	padding: ${(props) => (props.vertical ? 0 : "50px")};
 	width: 100%;
@@ -108,7 +110,7 @@ function FeedbackContent(props) {
 					rowSpan: 2,
 					styles: styles,
 				},
-				"Eficiência",
+				`${FeedbackItems["desempenho"][0]}`,
 				`${values.efficiency}`,
 				{
 					content: `${values.performanceCommentary}`,
@@ -116,7 +118,7 @@ function FeedbackContent(props) {
 					styles: styles,
 				},
 			],
-			["Eficácia", `${values.eficacia}`],
+			[`${FeedbackItems["desempenho"][1]}`, `${values.eficacia}`],
 		];
 
 		const comportamento = [
@@ -126,7 +128,7 @@ function FeedbackContent(props) {
 					rowSpan: 4,
 					styles: styles,
 				},
-				"Postura",
+				`${FeedbackItems["comportamento"][0]}`,
 				`${values.behavior}`,
 				{
 					content: `${values.behaviorCommentary}`,
@@ -134,9 +136,9 @@ function FeedbackContent(props) {
 					styles: styles,
 				},
 			],
-			["Resiliência", `${values.resilience}`],
-			["Desafios", `${values.challenges}`],
-			["Ética", `${values.ethic}`],
+			[`${FeedbackItems["comportamento"][1]}`, `${values.resilience}`],
+			[`${FeedbackItems["comportamento"][2]}`, `${values.challenges}`],
+			[`${FeedbackItems["comportamento"][3]}`, `${values.ethic}`],
 		];
 
 		const softSkills = [
@@ -146,7 +148,7 @@ function FeedbackContent(props) {
 					rowSpan: 7,
 					styles: styles,
 				},
-				"Resolução de problemas",
+				`${FeedbackItems["softSkills"][0]}`,
 				`${values.problemResolution}`,
 				{
 					content: `${values.softSkillsCommentary}`,
@@ -154,12 +156,15 @@ function FeedbackContent(props) {
 					styles: styles,
 				},
 			],
-			["Comunicação", `${values.communication}`],
-			["Pró-atividade", `${values.proactivity}`],
-			["Relacionamento Interpessoal", `${values.interpersonalRelationship}`],
-			["Trabalho em Equipe", `${values.teamWork}`],
-			["Relacionamento com a Equipe", `${values.teamRelationship}`],
-			["Fit Cultural", `${values.culturalFit}`],
+			[`${FeedbackItems["softSkills"][1]}`, `${values.communication}`],
+			[`${FeedbackItems["softSkills"][2]}`, `${values.proactivity}`],
+			[
+				`${FeedbackItems["softSkills"][3]}`,
+				`${values.interpersonalRelationship}`,
+			],
+			[`${FeedbackItems["softSkills"][4]}`, `${values.teamWork}`],
+			[`${FeedbackItems["softSkills"][5]}`, `${values.teamRelationship}`],
+			[`${FeedbackItems["softSkills"][6]}`, `${values.culturalFit}`],
 		];
 
 		doc.autoTable({
@@ -296,8 +301,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="efficiency" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador realizou entregas com qualidade e cumprindo as
-										metas estabelecidas?
+										{`${FeedbackItems["desempenho"][0]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -335,7 +339,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="eficacia" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador realizou entregas dentro do prazo e orçamento?
+										{`${FeedbackItems["desempenho"][1]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -402,8 +406,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="behavior" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador se comporta e se expressa de maneira adequada
-										em momentos de estresse?
+										{`${FeedbackItems["comportamento"][0]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -441,8 +444,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="resilience" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador demonstra ser resiliente em situações
-										complexas?
+										{`${FeedbackItems["comportamento"][1]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -480,9 +482,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="challenges" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador teve um comportamento anti-frágil, onde apesar
-										das dificuldades da situação ele soube se portar bem e
-										aprender com elas?
+										{`${FeedbackItems["comportamento"][2]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -520,9 +520,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="ethic" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador teve um comportamento ético seja diante de
-										situações nas quais estava equivocado, até mesmo em outras
-										relações do cotidiano?
+										{`${FeedbackItems["comportamento"][3]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -598,8 +596,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="problemResolution" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador soube lidar e resolver os mais diversos
-										problemas que surgiam no dia a dia da empresa?
+										{`${FeedbackItems["softSkills"][0]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -637,9 +634,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="communication" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador sabe se comunicar bem com qualquer pessoa do
-										ambiente de trabalho, até mesmo com colegas de outros
-										departamentos?
+										{`${FeedbackItems["softSkills"][1]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -677,8 +672,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="proactivity" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador demonstra ser pró-ativo nas mais diversar
-										ocasiões do dia a dia?
+										{`${FeedbackItems["softSkills"][2]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -716,8 +710,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="interpersonalRelationship" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador sabe se comunicar cordialmente com todos do
-										seu ambiente de trabalho?
+										{`${FeedbackItems["softSkills"][3]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -755,9 +748,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="teamWork" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador ajuda o seus colegas de equipe quando os
-										mesmos estão com dificuldade em alguma tarefa? O colaborador
-										sabe compartilhar seus conhecimentos?
+										{`${FeedbackItems["softSkills"][4]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -795,8 +786,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="teamRelationship" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador tem um bom relacionamento com seus colegas de
-										time, mesmo em situações de estresse?
+										{`${FeedbackItems["softSkills"][5]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
@@ -834,9 +824,7 @@ function FeedbackContent(props) {
 										<ErrorMessage name="culturalFit" />
 									</div>
 									<FormLabel component="legend" className="label">
-										O colaborador tem um fit-cultural com a empresa, seja
-										seguindo os processos, até mesmo na forma de se trabalhar em
-										equipe?
+										{`${FeedbackItems["softSkills"][6]}`}
 									</FormLabel>
 									<div className="options">
 										<RadioOptions
