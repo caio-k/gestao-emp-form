@@ -35,6 +35,7 @@ function FormStepper({ children, vertical, ...props }) {
 							alert("Feedback finalizado com sucesso! :)");
 							history.push("/home");
 						} else {
+							console.log(values);
 							setStep((s) => s + 1);
 							helpers.setTouched({});
 						}

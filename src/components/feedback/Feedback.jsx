@@ -12,7 +12,7 @@ import FormStep from "./FormStep";
 import RadioOptions from "./RadioOptions";
 
 const Container = styled("div")`
-	padding: 50px;
+	padding: ${(props) => (props.vertical ? 0 : "50px")};
 	width: 100%;
 	height: fit-content;
 	display: flex;
@@ -23,7 +23,7 @@ const Container = styled("div")`
 	color: ${(props) => props.theme.colors.black};
 
 	.card {
-		width: 90%;
+		width: ${(props) => (props.vertical ? "100%" : "90%")};
 		box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1);
 	}
 
@@ -55,6 +55,13 @@ const sleep = (time) => new Promise((acc) => setTimeout(acc, time));
 
 function FeedbackContent(props) {
 	const [vertical, setVertical] = useState(false);
+
+	/**
+	 * TODO: create an state for each question to persist the answer when the window resizes
+	 * and the spa refreshs to be responsible, after this we need to create an function that
+	 * will set the values for those states after each step, and we will pass this function as
+	 * a props to FormStepper that will call it passing the values as a param
+	 */
 
 	function todaysDate() {
 		const today = new Date();

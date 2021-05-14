@@ -4,7 +4,7 @@ import { Radio, FormControlLabel } from "@material-ui/core";
 
 function RadioOptions({ label, position, ...props }) {
 	const [field] = useField(props);
-	const placement = position ? "right" : "bottom";
+	const placement = position ? "end" : "bottom";
 
 	return (
 		<FormControlLabel
