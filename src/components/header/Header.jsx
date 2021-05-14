@@ -1,5 +1,5 @@
 import React from "react";
-import {useLocation} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import styled from "styled-components";
 
 import MenuItems from "./MenuItems";
@@ -157,11 +157,11 @@ const Menu = styled("ul")`
 function Header(props) {
   const {pathname} = useLocation();
 
-  const menuItemSelected = pathname.split("/")[2];
+  const menuItemSelected = pathname.split("/")[1];
 
   return (
     <Container>
-      <a href="/gestao-emp-form/home"><span>SMART</span></a>
+      <Link to={"/home"}><span>SMART</span></Link>
 
       <input type="checkbox" id="chk"/>
 
@@ -172,7 +172,7 @@ function Header(props) {
       <Menu>
         {MenuItems.map(item => {
           const isUnderlined = item.title.toLowerCase() === menuItemSelected;
-          return <a href={item.url} key={item.title} className={isUnderlined ? "spotlight" : ""}>{item.title}</a>
+          return <Link to={item.url} key={item.title} className={isUnderlined ? "spotlight" : ""}>{item.title}</Link>
         })}
 
         <a href="/" className="current-user-link">
