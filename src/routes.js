@@ -13,9 +13,9 @@ const SiteContent = styled("div")`
 const Routes = (props) => (
   <Router>
     <SiteContent>
-      <Route exact path="/gestao-emp-form" render={() => (<Redirect to="/gestao-emp-form/home"/>)}/>
-      <Route exact path="/gestao-emp-form/home" component={Home}/>
-      <Route exact path="/gestao-emp-form/feedback" component={Feedback}/>
+        <Route path="/gestao-emp-form/home" component={Home}/>
+        <Route path="/gestao-emp-form/feedback" component={Feedback}/>
+        <Route exact path="/gestao-emp-form" render={() => (<Redirect to="/gestao-emp-form/home"/>)}/>
     </SiteContent>
   </Router>
 );
