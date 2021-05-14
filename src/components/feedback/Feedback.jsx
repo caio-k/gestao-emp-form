@@ -101,10 +101,12 @@ function FeedbackContent(props) {
 								date: todaysDate(),
 								efficiency: "",
 								eficacia: "",
+								performanceCommentary: "",
 								behavior: "",
 								resilience: "",
 								challenges: "",
 								ethic: "",
+								behaviorCommentary: "",
 								problemResolution: "",
 								communication: "",
 								proactivity: "",
@@ -112,6 +114,7 @@ function FeedbackContent(props) {
 								teamWork: "",
 								teamRelationship: "",
 								culturalFit: "",
+								softSkillsCOmmentary: "",
 							}}
 							onSubmit={async (values) => {
 								const doc = new jsPDF();
@@ -305,6 +308,17 @@ Pilar de Habilidades Sociais e Pessoais
 										/>
 									</div>
 								</Box>
+								<Box paddingBottom={2} marginTop={4}>
+									<Field
+										fullWidth
+										multiline
+										variant="outlined"
+										rows={5}
+										name="performanceCommentary"
+										component={TextField}
+										label="Comentários"
+									/>
+								</Box>
 							</FormStep>
 							<FormStep
 								label="Pilar de Comportamento"
@@ -480,6 +494,17 @@ Pilar de Habilidades Sociais e Pessoais
 											label="Modelo/Referência"
 										/>
 									</div>
+								</Box>
+								<Box paddingBottom={2} marginTop={4}>
+									<Field
+										fullWidth
+										multiline
+										variant="outlined"
+										rows={5}
+										name="behaviorCommentary"
+										component={TextField}
+										label="Comentários"
+									/>
 								</Box>
 							</FormStep>
 							<FormStep
@@ -783,6 +808,17 @@ Pilar de Habilidades Sociais e Pessoais
 											label="Modelo/Referência"
 										/>
 									</div>
+								</Box>
+								<Box paddingBottom={2} marginTop={4}>
+									<Field
+										fullWidth
+										multiline
+										variant="outlined"
+										rows={5}
+										name="softSkillsCommentary"
+										component={TextField}
+										label="Comentários"
+									/>
 								</Box>
 							</FormStep>
 						</FormStepper>
