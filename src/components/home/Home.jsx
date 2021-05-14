@@ -19,14 +19,13 @@ const Phrase = styled("p")`
 	width: fit-content;
 	max-width: 70vw;
 	text-align: center;
-	margin-top: 250px;
+	margin-top: 100px;
 	font-style: italic;
 	font-weight: 650;
 	font-size: 3rem;
 	justify-self: center;
 	
 	@media (max-width: 1000px) {
-		margin-top: 100px;
 		font-size: 1.5em;
 	}
 `;
