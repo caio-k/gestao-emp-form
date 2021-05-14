@@ -6,7 +6,6 @@ import {
 	Grid,
 	Step,
 	StepLabel,
-	StepContent,
 	Stepper,
 } from "@material-ui/core";
 import { Form, Formik } from "formik";
@@ -34,7 +33,7 @@ function FormStepper({ children, vertical, ...props }) {
 						alert("Feedback finalizado com sucesso! :)");
 						history.push("/gestao-emp-form/home");
 					} else {
-						console.log(values);
+						window["scrollTo"]({ top: 0, behavior: "smooth" });
 						setStep((s) => s + 1);
 						helpers.setTouched({});
 					}
@@ -68,7 +67,10 @@ function FormStepper({ children, vertical, ...props }) {
 										disabled={isSubmitting}
 										variant="contained"
 										color="primary"
-										onClick={() => setStep((s) => s - 1)}
+										onClick={() => {
+											window["scrollTo"]({ top: 0, behavior: "smooth" });
+											setStep((s) => s - 1);
+										}}
 									>
 										Voltar
 									</Button>
