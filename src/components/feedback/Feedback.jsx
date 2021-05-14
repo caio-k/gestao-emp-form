@@ -99,9 +99,72 @@ function FeedbackContent(props) {
 		const dateStringArray = values.date.split("-");
 		const date = `${dateStringArray[2]}/${dateStringArray[1]}/${dateStringArray[0]}`;
 
+		const styles = { valign: "middle", halign: "center" };
+
+		const desempenho = [
+			[
+				{
+					content: `Desempenho`,
+					rowSpan: 2,
+					styles: styles,
+				},
+				"Eficiência",
+				`${values.efficiency}`,
+				{
+					content: `${values.performanceCommentary}`,
+					rowSpan: 2,
+					styles: styles,
+				},
+			],
+			["Eficácia", `${values.eficacia}`],
+		];
+
+		const comportamento = [
+			[
+				{
+					content: "Comportamento",
+					rowSpan: 4,
+					styles: styles,
+				},
+				"Postura",
+				`${values.behavior}`,
+				{
+					content: `${values.behaviorCommentary}`,
+					rowSpan: 4,
+					styles: styles,
+				},
+			],
+			["Resiliência", `${values.resilience}`],
+			["Desafios", `${values.challenges}`],
+			["Ética", `${values.ethic}`],
+		];
+
+		const softSkills = [
+			[
+				{
+					content: "Habilidades Sociais e Pessoais",
+					rowSpan: 7,
+					styles: styles,
+				},
+				"Resolução de problemas",
+				`${values.problemResolution}`,
+				{
+					content: `${values.softSkillsCommentary}`,
+					rowSpan: 7,
+					styles: styles,
+				},
+			],
+			["Comunicação", `${values.communication}`],
+			["Pró-atividade", `${values.proactivity}`],
+			["Relacionamento Interpessoal", `${values.interpersonalRelationship}`],
+			["Trabalho em Equipe", `${values.teamWork}`],
+			["Relacionamento com a Equipe", `${values.teamRelationship}`],
+			["Fit Cultural", `${values.culturalFit}`],
+		];
+
 		doc.autoTable({
 			head: tableHead,
-			body: [["Desempenho", "Pergunta 1", "Aderente", "Muito top"]],
+			body: [...desempenho, ...comportamento, ...softSkills],
 			didDrawPage: function (data) {
 				// Header
 				doc.setFontSize(20);
@@ -127,6 +190,7 @@ function FeedbackContent(props) {
 				);
 			},
 			margin: { top: 50 },
+			theme: "grid",
 		});
 
 		doc.save("feedback.pdf");
@@ -159,69 +223,10 @@ function FeedbackContent(props) {
 								teamWork: "",
 								teamRelationship: "",
 								culturalFit: "",
-								softSkillsCOmmentary: "",
+								softSkillsCommentary: "",
 							}}
 							onSubmit={async (values) => {
-								// const doc = new jsPDF();
-
 								await sleep(1500);
-
-								// 								const avaliador = values.myName;
-								// 								const avaliado = values.employeeName;
-								// 								const dateStringArray = values.date.split("-");
-								// 								const eficiencia = values.efficiency;
-								// 								const eficacia = values.eficacia;
-								// 								const comportamento = values.behavior;
-								// 								const resiliencia = values.resilience;
-								// 								const desafio = values.challenges;
-								// 								const etica = values.ethic;
-								// 								const resolucaoProblemas = values.problemResolution;
-								// 								const comunicacao = values.communication;
-								// 								const proatividade = values.proactivity;
-								// 								const relacionamentoInterpessoal =
-								// 									values.interpersonalRelationship;
-								// 								const trabalhoEquipe = values.teamWork;
-								// 								const relacionamentoEquipe = values.teamRelationship;
-								// 								const fitCultural = values.culturalFit;
-
-								// 								const performanceCommentary = values.performanceCommentary;
-								// 								const behaviorCommentary = values.behaviorCommentary;
-								// 								const softSkillsCommentary = values.softSkillsCommentary;
-
-								// 								const data = `${dateStringArray[2]}/${dateStringArray[1]}/${dateStringArray[0]}`;
-
-								// 								const stringContent = `Data do feedback: ${data}
-								// Nome do avaliador: ${avaliador}
-								// Nome do avaliado: ${avaliado}
-
-								// Pilar de Desempenho
-								// 1) Eficiência: ${eficiencia}
-								// 2) Eficácia: ${eficacia}
-								// Comentários: ${performanceCommentary}
-
-								// Pilar de Comportamento
-								// 3) Postura: ${comportamento}
-								// 4) Resiliência: ${resiliencia}
-								// 5) Desafios: ${desafio}
-								// 6) Ética: ${etica}
-								// Comentários: ${behaviorCommentary}
-
-								// Pilar de Habilidades Sociais e Pessoais
-								// 7) Resolução de problemas: ${resolucaoProblemas}
-								// 8) Comunicação: ${comunicacao}
-								// 9) Pró-atividade: ${proatividade}
-								// 10) Relacionamento Interpessoal: ${relacionamentoInterpessoal}
-								// 11) Trabalho em Equipe: ${trabalhoEquipe}
-								// 12) Relacionamento com a Equipe: ${relacionamentoEquipe}
-								// 13) Fit cultural: ${fitCultural}
-								// Comentários: ${softSkillsCommentary}
-
-								// Quantos caracteres será que a linha aguenta ou será que ela quebra sozinha eu acho que ela não quebra soziunha que merada`;
-
-								// 								doc.setFontSize(14);
-								// 								doc.text(stringContent, 20, 20);
-								// 								doc.save("feedback.pdf");
-
 								generatePDFTable(values);
 								await sleep(1000);
 							}}
