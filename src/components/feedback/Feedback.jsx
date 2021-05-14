@@ -63,7 +63,9 @@ const Container = styled("div")`
 const sleep = (time) => new Promise((acc) => setTimeout(acc, time));
 
 function FeedbackContent(props) {
-	const [vertical, setVertical] = useState(false);
+	const [vertical, setVertical] = useState(
+		document.body.clientWidth <= 600 ? true : false
+	);
 
 	function todaysDate() {
 		const today = new Date();
