@@ -36,7 +36,7 @@ const Container = styled("div")`
 
 	.label {
 		margin: 12px;
-		justify-self: center;
+		text-align: justify;
 		max-width: 80em;
 	}
 
