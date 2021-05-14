@@ -1,11 +1,11 @@
 const MenuItems = [
   {
     title: 'Home',
-    url: '/gestao-emp-form/home',
+    url: "/gestao-emp-form/home"
   },
   {
     title: 'Feedback',
-    url: '/gestao-emp-form/feedback'
+    url: "/gestao-emp-form/feedback"
   }
 ]
 
