@@ -82,7 +82,7 @@ function HomeContent(props) {
   const history = useHistory();
 
   function onClickHandler() {
-    history.push("/feedback");
+    history.push("/gestao-emp-form/feedback");
   }
 
   return (
@@ -93,7 +93,7 @@ function HomeContent(props) {
           “We all need people who will give us feedback. That's how we improve.”
         </Phrase>
         <Author>Bill Gates</Author>
-        <Button onClick={() => onClickHandler()}>Dar meu feedback -&gt;</Button>
+        <Button onClick={() => onClickHandler()}>Dar meu feedback <i className="fas fa-arrow-circle-right"/></Button>
       </Container>
     </>
   );
