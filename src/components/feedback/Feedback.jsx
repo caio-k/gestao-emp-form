@@ -24,6 +24,7 @@ const Container = styled("div")`
 
 	.card {
 		width: ${(props) => (props.vertical ? "100%" : "90%")};
+		margin-top: ${(props) => (props.vertical ? "8vh" : 0)};
 		box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1);
 	}
 
@@ -49,19 +50,17 @@ const Container = styled("div")`
 		font-size: 0.8rem;
 		color: red;
 	}
+
+	.step-vertical {
+		text-align: center;
+		padding: 24px;
+	}
 `;
 
 const sleep = (time) => new Promise((acc) => setTimeout(acc, time));
 
 function FeedbackContent(props) {
 	const [vertical, setVertical] = useState(false);
-
-	/**
-	 * TODO: create an state for each question to persist the answer when the window resizes
-	 * and the spa refreshs to be responsible, after this we need to create an function that
-	 * will set the values for those states after each step, and we will pass this function as
-	 * a props to FormStepper that will call it passing the values as a param
-	 */
 
 	function todaysDate() {
 		const today = new Date();
