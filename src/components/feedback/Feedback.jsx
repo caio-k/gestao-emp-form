@@ -63,9 +63,16 @@ const Container = styled("div")`
 const sleep = (time) => new Promise((acc) => setTimeout(acc, time));
 
 function FeedbackContent(props) {
-	const [vertical, setVertical] = useState(
-		document.body.clientWidth <= 600 ? true : false
-	);
+	const threshold = 650;
+	const [vertical, setVertical] = useState(document.body.clientWidth <= threshold);
+
+	useEffect(() => {
+		window.addEventListener("resize", onResize);
+	}, []);
+
+	const onResize = () => {
+		setVertical(document.body.clientWidth <= threshold);
+	};
 
 	function todaysDate() {
 		const today = new Date();
@@ -79,18 +86,6 @@ function FeedbackContent(props) {
 
 		return `${year}-${month}-${day}`;
 	}
-
-	useEffect(() => {
-		window.addEventListener("resize", onResize);
-	}, []);
-
-	const onResize = (e) => {
-		if (document.body.clientWidth <= 600) {
-			setVertical(true);
-		} else {
-			setVertical(false);
-		}
-	};
 
 	function generatePDFTable(values) {
 		const doc = new jsPDF();
