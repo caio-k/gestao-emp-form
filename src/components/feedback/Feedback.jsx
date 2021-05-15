@@ -170,28 +170,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="efficiency"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="efficiency"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="efficiency"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="efficiency"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -208,28 +204,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="eficacia"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="eficacia"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="eficacia"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="eficacia"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -275,28 +267,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="behavior"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="behavior"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="behavior"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="behavior"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -313,28 +301,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="resilience"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="resilience"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="resilience"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="resilience"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -351,28 +335,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="challenges"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="challenges"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="challenges"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="challenges"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -389,28 +369,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="ethic"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="ethic"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="ethic"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="ethic"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -465,28 +441,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="problemResolution"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="problemResolution"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="problemResolution"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="problemResolution"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -503,28 +475,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="communication"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="communication"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="communication"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="communication"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -541,28 +509,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="proactivity"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="proactivity"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="proactivity"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="proactivity"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -579,28 +543,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="interpersonalRelationship"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="interpersonalRelationship"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="interpersonalRelationship"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="interpersonalRelationship"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -617,28 +577,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="teamWork"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="teamWork"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="teamWork"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="teamWork"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -655,28 +611,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="teamRelationship"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="teamRelationship"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="teamRelationship"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="teamRelationship"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
@@ -693,28 +645,24 @@ function FeedbackContent() {
                   <div className="options">
                     <RadioOptions
                       name="culturalFit"
-                      type="radio"
                       position={vertical}
                       value="Não Aderente"
                       label="Não Aderente"
                     />
                     <RadioOptions
                       name="culturalFit"
-                      type="radio"
                       position={vertical}
                       value="Parcialmente Aderente"
                       label="Parcialmente Aderente"
                     />
                     <RadioOptions
                       name="culturalFit"
-                      type="radio"
                       position={vertical}
                       value="Aderente"
                       label="Aderente"
                     />
                     <RadioOptions
                       name="culturalFit"
-                      type="radio"
                       position={vertical}
                       value="Modelo/Referência"
                       label="Modelo/Referência"
