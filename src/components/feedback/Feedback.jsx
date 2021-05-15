@@ -108,10 +108,10 @@ function FeedbackContent() {
                     .required("É necessário informar o nome do avaliador."),
                   employeeName: yup
                     .string()
-                    .required(
-                      "É necessário informar o nome de quem está sendo avaliado."
-                    ),
-                  date: yup.date().required("É necessário informar uma data."),
+                    .required("É necessário informar o nome de quem está sendo avaliado."),
+                  date: yup
+                    .date()
+                    .required("É necessário informar uma data.")
                 })}
               >
                 <Box paddingBottom={2}>
@@ -120,9 +120,7 @@ function FeedbackContent() {
                     name="myName"
                     component={TextField}
                     label="Nome do avaliador"
-                    InputLabelProps={{
-                      required: true,
-                    }}
+                    InputLabelProps={{required: true}}
                   />
                 </Box>
                 <Box paddingBottom={2}>
@@ -131,9 +129,7 @@ function FeedbackContent() {
                     name="employeeName"
                     component={TextField}
                     label="Nome do avaliado"
-                    InputLabelProps={{
-                      required: true,
-                    }}
+                    InputLabelProps={{required: true}}
                   />
                 </Box>
                 <Box paddingBottom={2}>
@@ -142,13 +138,11 @@ function FeedbackContent() {
                     type="date"
                     component={TextField}
                     label="Data"
-                    InputLabelProps={{
-                      shrink: true,
-                      required: true,
-                    }}
+                    InputLabelProps={{shrink: true, required: true}}
                   />
                 </Box>
               </FormStep>
+
               <FormStep
                 label="Pilar de Desempenho"
                 validationSchema={yup.object().shape({
@@ -157,7 +151,7 @@ function FeedbackContent() {
                     .required("É necessário escolher uma das opções."),
                   eficacia: yup
                     .string()
-                    .required("É necessário escolher uma das opções."),
+                    .required("É necessário escolher uma das opções.")
                 })}
               >
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
@@ -168,32 +162,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["desempenho"][0]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="efficiency"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="efficiency"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="efficiency"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="efficiency"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="efficiency" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="efficiency" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="efficiency" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="efficiency" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="eficacia"/>
@@ -202,32 +184,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["desempenho"][1]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="eficacia"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="eficacia"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="eficacia"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="eficacia"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="eficacia" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="eficacia" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="eficacia" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="eficacia" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4}>
                   <Field
                     fullWidth
@@ -240,6 +210,7 @@ function FeedbackContent() {
                   />
                 </Box>
               </FormStep>
+
               <FormStep
                 label="Pilar de Comportamento"
                 validationSchema={yup.object().shape({
@@ -254,7 +225,7 @@ function FeedbackContent() {
                     .required("É necessário escolher uma das opções."),
                   ethic: yup
                     .string()
-                    .required("É necessário escolher uma das opções."),
+                    .required("É necessário escolher uma das opções.")
                 })}
               >
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
@@ -265,32 +236,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["comportamento"][0]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="behavior"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="behavior"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="behavior"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="behavior"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="behavior" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="behavior" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="behavior" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="behavior" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="resilience"/>
@@ -299,32 +258,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["comportamento"][1]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="resilience"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="resilience"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="resilience"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="resilience"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="resilience" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="resilience" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="resilience" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="resilience" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="challenges"/>
@@ -333,32 +280,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["comportamento"][2]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="challenges"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="challenges"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="challenges"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="challenges"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="challenges" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="challenges" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="challenges" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="challenges" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="ethic"/>
@@ -367,32 +302,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["comportamento"][3]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="ethic"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="ethic"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="ethic"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="ethic"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="ethic" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="ethic" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="ethic" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="ethic" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4}>
                   <Field
                     fullWidth
@@ -405,6 +328,7 @@ function FeedbackContent() {
                   />
                 </Box>
               </FormStep>
+
               <FormStep
                 label="Pilar de Soft Skills"
                 validationSchema={yup.object().shape({
@@ -428,7 +352,7 @@ function FeedbackContent() {
                     .required("É necessário escolher uma das opções."),
                   culturalFit: yup
                     .string()
-                    .required("É necessário escolher uma das opções."),
+                    .required("É necessário escolher uma das opções.")
                 })}
               >
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
@@ -439,32 +363,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["softSkills"][0]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="problemResolution"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="problemResolution"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="problemResolution"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="problemResolution"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="problemResolution" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="problemResolution" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="problemResolution" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="problemResolution" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="communication"/>
@@ -473,32 +385,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["softSkills"][1]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="communication"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="communication"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="communication"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="communication"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="communication" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="communication" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="communication" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="communication" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="proactivity"/>
@@ -507,32 +407,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["softSkills"][2]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="proactivity"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="proactivity"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="proactivity"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="proactivity"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="proactivity" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="proactivity" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="proactivity" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="proactivity" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="interpersonalRelationship"/>
@@ -541,32 +429,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["softSkills"][3]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="interpersonalRelationship"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="interpersonalRelationship"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="interpersonalRelationship"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="interpersonalRelationship"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="interpersonalRelationship" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="interpersonalRelationship" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="interpersonalRelationship" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="interpersonalRelationship" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="teamWork"/>
@@ -575,32 +451,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["softSkills"][4]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="teamWork"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="teamWork"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="teamWork"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="teamWork"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="teamWork" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="teamWork" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="teamWork" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="teamWork" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="teamRelationship"/>
@@ -609,32 +473,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["softSkills"][5]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="teamRelationship"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="teamRelationship"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="teamRelationship"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="teamRelationship"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="teamRelationship" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="teamRelationship" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="teamRelationship" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="teamRelationship" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="culturalFit"/>
@@ -643,32 +495,20 @@ function FeedbackContent() {
                     {`${FeedbackItems["softSkills"][6]}`}
                   </FormLabel>
                   <div className="options">
-                    <RadioOptions
-                      name="culturalFit"
-                      position={vertical}
-                      value="Não Aderente"
-                      label="Não Aderente"
-                    />
-                    <RadioOptions
-                      name="culturalFit"
-                      position={vertical}
-                      value="Parcialmente Aderente"
-                      label="Parcialmente Aderente"
-                    />
-                    <RadioOptions
-                      name="culturalFit"
-                      position={vertical}
-                      value="Aderente"
-                      label="Aderente"
-                    />
-                    <RadioOptions
-                      name="culturalFit"
-                      position={vertical}
-                      value="Modelo/Referência"
-                      label="Modelo/Referência"
-                    />
+                    <RadioOptions name="culturalFit" position={vertical} value="Não Aderente"
+                                  label="Não Aderente"/>
+
+                    <RadioOptions name="culturalFit" position={vertical} value="Parcialmente Aderente"
+                                  label="Parcialmente Aderente"/>
+
+                    <RadioOptions name="culturalFit" position={vertical} value="Aderente"
+                                  label="Aderente"/>
+
+                    <RadioOptions name="culturalFit" position={vertical} value="Modelo/Referência"
+                                  label="Modelo/Referência"/>
                   </div>
                 </Box>
+
                 <Box paddingBottom={2} marginTop={4}>
                   <Field
                     fullWidth
