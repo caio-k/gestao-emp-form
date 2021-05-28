@@ -78,21 +78,31 @@ function FeedbackContent() {
                 employeeName: "",
                 date: todaysDate(),
                 efficiency: "",
+								efficiencyComment: "",
                 eficacia: "",
-                performanceCommentary: "",
+                eficaciaComment: "",
                 behavior: "",
+                behaviorComment: "",
                 resilience: "",
+                resilienceComment: "",
                 challenges: "",
+								challengesComment: "",
                 ethic: "",
-                behaviorCommentary: "",
+								ethicComment: "",
                 problemResolution: "",
+								problemResolutionComment: "",
                 communication: "",
+								communicationComment: "",
                 proactivity: "",
+								proactivityComment: "",
                 interpersonalRelationship: "",
+								interpersonalRelationshipComment: "",
                 teamWork: "",
+								teamWorkComment: "",
                 teamRelationship: "",
+								teamRelationshipComment: "",
                 culturalFit: "",
-                softSkillsCommentary: "",
+                culturalFitComment: "",
               }}
               onSubmit={async (values) => {
                 await sleep(1500);
@@ -176,6 +186,18 @@ function FeedbackContent() {
                   </div>
                 </Box>
 
+								<Box paddingBottom={2} marginTop={4}>
+                  <Field
+                    fullWidth
+                    multiline
+                    variant="outlined"
+                    rows={5}
+                    name="efficiencyComment"
+                    component={TextField}
+                    label="Comentários"
+                  />
+                </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="eficacia"/>
@@ -204,7 +226,7 @@ function FeedbackContent() {
                     multiline
                     variant="outlined"
                     rows={5}
-                    name="performanceCommentary"
+                    name="eficaciaComment"
                     component={TextField}
                     label="Comentários"
                   />
@@ -250,6 +272,18 @@ function FeedbackContent() {
                   </div>
                 </Box>
 
+								<Box paddingBottom={2} marginTop={4}>
+                  <Field
+                    fullWidth
+                    multiline
+                    variant="outlined"
+                    rows={5}
+                    name="behaviorComment"
+                    component={TextField}
+                    label="Comentários"
+                  />
+                </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="resilience"/>
@@ -272,6 +306,18 @@ function FeedbackContent() {
                   </div>
                 </Box>
 
+								<Box paddingBottom={2} marginTop={4}>
+                  <Field
+                    fullWidth
+                    multiline
+                    variant="outlined"
+                    rows={5}
+                    name="resilienceComment"
+                    component={TextField}
+                    label="Comentários"
+                  />
+                </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="challenges"/>
@@ -292,6 +338,18 @@ function FeedbackContent() {
                     <RadioOptions name="challenges" position={vertical} value="Modelo/Referência"
                                   label="Modelo/Referência"/>
                   </div>
+                </Box>
+
+								<Box paddingBottom={2} marginTop={4}>
+                  <Field
+                    fullWidth
+                    multiline
+                    variant="outlined"
+                    rows={5}
+                    name="challengesComment"
+                    component={TextField}
+                    label="Comentários"
+                  />
                 </Box>
 
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
@@ -322,7 +380,7 @@ function FeedbackContent() {
                     multiline
                     variant="outlined"
                     rows={5}
-                    name="behaviorCommentary"
+                    name="ethicComment"
                     component={TextField}
                     label="Comentários"
                   />
@@ -377,6 +435,18 @@ function FeedbackContent() {
                   </div>
                 </Box>
 
+								<Box paddingBottom={2} marginTop={4}>
+                  <Field
+                    fullWidth
+                    multiline
+                    variant="outlined"
+                    rows={5}
+                    name="problemResolutionComment"
+                    component={TextField}
+                    label="Comentários"
+                  />
+                </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="communication"/>
@@ -397,6 +467,18 @@ function FeedbackContent() {
                     <RadioOptions name="communication" position={vertical} value="Modelo/Referência"
                                   label="Modelo/Referência"/>
                   </div>
+                </Box>
+
+								<Box paddingBottom={2} marginTop={4}>
+                  <Field
+                    fullWidth
+                    multiline
+                    variant="outlined"
+                    rows={5}
+                    name="communicationComment"
+                    component={TextField}
+                    label="Comentários"
+                  />
                 </Box>
 
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
@@ -421,6 +503,18 @@ function FeedbackContent() {
                   </div>
                 </Box>
 
+								<Box paddingBottom={2} marginTop={4}>
+                  <Field
+                    fullWidth
+                    multiline
+                    variant="outlined"
+                    rows={5}
+                    name="proactivityComment"
+                    component={TextField}
+                    label="Comentários"
+                  />
+                </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="interpersonalRelationship"/>
@@ -441,6 +535,18 @@ function FeedbackContent() {
                     <RadioOptions name="interpersonalRelationship" position={vertical} value="Modelo/Referência"
                                   label="Modelo/Referência"/>
                   </div>
+                </Box>
+
+								<Box paddingBottom={2} marginTop={4}>
+                  <Field
+                    fullWidth
+                    multiline
+                    variant="outlined"
+                    rows={5}
+                    name="interpersonalRelationshipComment"
+                    component={TextField}
+                    label="Comentários"
+                  />
                 </Box>
 
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
@@ -465,6 +571,18 @@ function FeedbackContent() {
                   </div>
                 </Box>
 
+								<Box paddingBottom={2} marginTop={4}>
+                  <Field
+                    fullWidth
+                    multiline
+                    variant="outlined"
+                    rows={5}
+                    name="teamWorkComment"
+                    component={TextField}
+                    label="Comentários"
+                  />
+                </Box>
+
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
                   <div className="error-msg">
                     <ErrorMessage name="teamRelationship"/>
@@ -485,6 +603,18 @@ function FeedbackContent() {
                     <RadioOptions name="teamRelationship" position={vertical} value="Modelo/Referência"
                                   label="Modelo/Referência"/>
                   </div>
+                </Box>
+
+								<Box paddingBottom={2} marginTop={4}>
+                  <Field
+                    fullWidth
+                    multiline
+                    variant="outlined"
+                    rows={5}
+                    name="teamRelationshipComment"
+                    component={TextField}
+                    label="Comentários"
+                  />
                 </Box>
 
                 <Box paddingBottom={2} marginTop={4} className="box-step2">
@@ -515,7 +645,7 @@ function FeedbackContent() {
                     multiline
                     variant="outlined"
                     rows={5}
-                    name="softSkillsCommentary"
+                    name="culturalFitComment"
                     component={TextField}
                     label="Comentários"
                   />
