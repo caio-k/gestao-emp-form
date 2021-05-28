@@ -44,13 +44,9 @@ const useFeedback = () => {
         },
         `${FeedbackItems["desempenho"][0]}`,
         `${values.efficiency}`,
-        {
-          content: `${values.performanceCommentary}`,
-          rowSpan: 2,
-          styles: styles,
-        },
+        `${values.efficiencyComment}`
       ],
-      [`${FeedbackItems["desempenho"][1]}`, `${values.eficacia}`],
+      [`${FeedbackItems["desempenho"][1]}`, `${values.eficacia}`, `${values.eficaciaComment}`],
     ];
 
     const comportamento = [
@@ -62,15 +58,11 @@ const useFeedback = () => {
         },
         `${FeedbackItems["comportamento"][0]}`,
         `${values.behavior}`,
-        {
-          content: `${values.behaviorCommentary}`,
-          rowSpan: 4,
-          styles: styles,
-        },
+        `${values.behaviorComment}`,
       ],
-      [`${FeedbackItems["comportamento"][1]}`, `${values.resilience}`],
-      [`${FeedbackItems["comportamento"][2]}`, `${values.challenges}`],
-      [`${FeedbackItems["comportamento"][3]}`, `${values.ethic}`],
+      [`${FeedbackItems["comportamento"][1]}`, `${values.resilience}`, `${values.resilienceComment}`],
+      [`${FeedbackItems["comportamento"][2]}`, `${values.challenges}`, `${values.challengesComment}`],
+      [`${FeedbackItems["comportamento"][3]}`, `${values.ethic}`, `${values.ethicComment}`],
     ];
 
     const softSkills = [
@@ -82,21 +74,18 @@ const useFeedback = () => {
         },
         `${FeedbackItems["softSkills"][0]}`,
         `${values.problemResolution}`,
-        {
-          content: `${values.softSkillsCommentary}`,
-          rowSpan: 7,
-          styles: styles,
-        },
+        `${values.problemResolutionComment}`,
       ],
-      [`${FeedbackItems["softSkills"][1]}`, `${values.communication}`],
-      [`${FeedbackItems["softSkills"][2]}`, `${values.proactivity}`],
+      [`${FeedbackItems["softSkills"][1]}`, `${values.communication}`, `${values.communicationComment}`],
+      [`${FeedbackItems["softSkills"][2]}`, `${values.proactivity}`, `${values.proactivityComment}`],
       [
         `${FeedbackItems["softSkills"][3]}`,
         `${values.interpersonalRelationship}`,
+        `${values.interpersonalRelationshipComment}`
       ],
-      [`${FeedbackItems["softSkills"][4]}`, `${values.teamWork}`],
-      [`${FeedbackItems["softSkills"][5]}`, `${values.teamRelationship}`],
-      [`${FeedbackItems["softSkills"][6]}`, `${values.culturalFit}`],
+      [`${FeedbackItems["softSkills"][4]}`, `${values.teamWork}`, `${values.teamWorkComment}`],
+      [`${FeedbackItems["softSkills"][5]}`, `${values.teamRelationship}`, `${values.teamRelationshipComment}`],
+      [`${FeedbackItems["softSkills"][6]}`, `${values.culturalFit}`, `${values.culturalFitComment}`],
     ];
 
     doc.autoTable({
